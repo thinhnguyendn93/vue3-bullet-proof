@@ -1,0 +1,160 @@
+@mixin font-icon($icon-name, $size: 16px, $style: normal) {
+  content: map-get($icons, $icon-name);
+  font-family: quote("font-icon");
+  font-style: $style;
+  font-size: $size;
+}
+
+@mixin truncate-text() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin truncate-multiline-line($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin input-label {
+  display: block;
+  text-transform: initial;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-east-bay);
+  margin-bottom: 8px;
+}
+
+@mixin error-message {
+  color: var(--color-carnation);
+  font-size: 14px;
+  line-height: 22px;
+  padding-top: 2px;
+  position: initial;
+  text-align: right;
+  width: 100%;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
+
+@mixin checkbox-input-size($size-map) {
+  --el-checkbox-input-width: #{map-get($size-map, "input-width")};
+  --el-checkbox-input-height: #{map-get($size-map, "input-height")};
+  --el-checkbox-input-border: 1px solid var(--color-santas-gray);
+}
+
+@mixin checkbox-checked($size-map) {
+  $checked-map: $size-map;
+
+  @if map-has-key($size-map, "checked") {
+    $checked-map: map-get($size-map, "checked");
+  }
+  top: map-get($checked-map, "top");
+  left: map-get($checked-map, "left");
+  width: map-get($checked-map, "width");
+  height: map-get($checked-map, "height");
+}
+
+@mixin button-hover($type-map) {
+  $hover-map: map-get($type-map, "hover");
+
+  &:not(.is-text) {
+    &:hover,
+    &:focus {
+      --el-button-hover-text-color: #{map-get($hover-map, "color")};
+      --el-button-hover-border-color: #{map-get($hover-map, "border-color")};
+      --el-button-hover-bg-color: #{map-get($hover-map, "background")};
+    }
+  }
+}
+
+@mixin button-pressed($type-map) {
+  $active-map: map-get($type-map, "pressed");
+
+  &:not(.is-text) {
+    &:active {
+      --el-button-active-text-color: #{map-get($active-map, "color")};
+      --el-button-active-border-color: #{map-get($active-map, "border-color")};
+      --el-button-active-bg-color: #{map-get($active-map, "background")};
+    }
+  }
+}
+
+@mixin button-disabled($type-map) {
+  &.is-disabled,
+  &.is-disabled:focus,
+  &.is-disabled:hover,
+  &.is-disabled:active {
+    $button-disabled-map: map-get($type-map, "disabled");
+    color: #{map-get($button-disabled-map, "color")};
+    background-color: #{map-get($button-disabled-map, "background")};
+    border-color: #{map-get($button-disabled-map, "border-color")};
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@mixin button-plain($plain-map) {
+  &.is-plain {
+    --el-button-text-color: #{map-get($plain-map, "color")};
+    --el-button-bg-color: #{map-get($plain-map, "background")};
+    --el-button-border-color: #{map-get($plain-map, "border-color")};
+
+    @include button-hover($plain-map);
+    @include button-pressed($plain-map);
+    @include button-disabled($plain-map);
+  }
+}
+
+@mixin button-type($type-map, $type) {
+  --el-button-text-color: #{map-get($type-map, "color")};
+  --el-button-bg-color: #{map-get($type-map, "background")};
+  --el-button-border-color: #{map-get($type-map, "border-color")};
+
+  @include button-hover($type-map);
+  @include button-pressed($type-map);
+  @if ($type != "default") {
+    $plain-map: map-get($type-map, "plain");
+    @include button-plain($plain-map);
+  }
+}
+
+@mixin button-size($size-map) {
+  padding: #{map-get($size-map, "padding")};
+  font-size: #{map-get($size-map, "font-size")};
+  line-height: #{map-get($size-map, "line-height")};
+  border-radius: #{map-get($size-map, "border-radius")};
+  height: #{map-get($size-map, "height")};
+}
+
+@mixin logo-image($image-map, $root) {
+  #{$root}__image {
+    width: #{map-get($image-map, "width")};
+    height: #{map-get($image-map, "height")};
+  }
+}
+
+@mixin logo-size($size-map, $root) {
+  width: #{map-get($size-map, "width")};
+  height: #{map-get($size-map, "height")};
+  min-width: #{map-get($size-map, "min-width")};
+  $image: map-get($size-map, "image");
+
+  @if $image != null {
+    @include logo-image($image, $root);
+  }
+}

@@ -1,0 +1,9 @@
+@at-root {
+  @font-face {
+    font-family: quote("font-icon");
+    font-weight: normal;
+    font-style: normal;
+    src: resolve("font-icon.eot");
+    src: resolve("font-icon.eot") format("embedded-opentype"), resolve("font-icon.ttf") format("truetype"), resolve("font-icon.woff") format("woff");
+  }
+}

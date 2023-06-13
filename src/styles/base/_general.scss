@@ -1,0 +1,27 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  line-height: 1.15;
+}
+
+body,
+input,
+textarea {
+  font-family: Inter;
+  color: var(--color-east-bay);
+}
+
+body,
+p {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}

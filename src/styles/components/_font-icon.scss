@@ -1,0 +1,50 @@
+.font-icon {
+  font-family: font-icon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: var(--color-black);
+  font-size: 16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @each $name, $value in $icons {
+    &--#{$name}:before {
+      content: $value;
+    }
+  }
+
+  @each $color, $value in $colors {
+    &--#{$color} {
+      color: $value;
+    }
+  }
+
+  &--cursor {
+    cursor: pointer;
+  }
+
+  &--size-24 {
+    font-size: 24px;
+  }
+
+  &--size-32 {
+    font-size: 32px;
+  }
+
+  &--size-16 {
+    font-size: 16px;
+  }
+
+  &--size-48 {
+    font-size: 48px;
+  }
+
+  &--size-14 {
+    font-size: 14px;
+  }
+}

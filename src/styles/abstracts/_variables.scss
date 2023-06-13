@@ -1,0 +1,232 @@
+$icon-sizes: 14, 16, 18, 20, 21, 24, 28, 32, 36, 80, 160;
+
+$loader-sizes: 10, 12, 14, 30;
+
+$checkbox-sizes: (
+  "small": (
+    "input-width": 12px,
+    "input-height": 12px,
+    "input-font-size": 12px,
+    "checked": (
+      "top": 1px,
+      "left": 4px,
+      "width": 2px,
+      "height": 6px,
+    ),
+  ),
+  "medium": (
+    "input-width": 14px,
+    "input-height": 14px,
+    "input-font-size": 14px,
+    "checked": (
+      "top": 2px,
+      "left": 4px,
+      "width": 3px,
+      "height": 6px,
+    ),
+  ),
+  "large": (
+    "input-width": 16px,
+    "input-height": 16px,
+    "input-font-size": 14px,
+    "checked": (
+      "top": 1px,
+      "left": 4px,
+      "width": 3px,
+      "height": 8px,
+    ),
+  ),
+);
+
+$button-types: (
+  "default": (
+    "color": var(--color-kimberly-extra),
+    "background": var(--background-white),
+    "border-color": var(--color-snuff),
+    "hover": (
+      "color": var(--color-kimberly-extra),
+      "background": var(--background-white),
+      "border-color": var(--color-snuff),
+    ),
+    "pressed": (
+      "color": var(--color-kimberly-extra),
+      "background": var(--background-white),
+      "border-color": var(--color-snuff),
+    ),
+    "disabled": (
+      "color": var(--color-blue-haze),
+      "background": var(--background-white),
+      "border-color": var(--color-white-lilac-extra),
+    ),
+  ),
+  "primary": (
+    "color": var(--color-white),
+    "background": var(--background-royal-blue),
+    "border-color": var(--color-royal-blue),
+    "hover": (
+      "color": var(--color-white),
+      "background": var(--background-purple-heart),
+      "border-color": var(--color-purple-heart),
+    ),
+    "pressed": (
+      "color": var(--color-white),
+      "background": var(--background-daisy-bush),
+      "border-color": var(--color-daisy-bush),
+    ),
+    "disabled": (
+      "color": var(--color-white),
+      "background": var(--background-melrose),
+      "border-color": var(--color-melrose),
+    ),
+    "plain": (
+      "color": var(--color-royal-blue),
+      "background": var(--background-blue-chalk),
+      "border-color": var(--color-royal-blue),
+      "hover": (
+        "color": var(--color-white),
+        "background": var(--background-royal-blue),
+        "border-color": var(--color-royal-blue),
+      ),
+      "pressed": (
+        "color": var(--color-white),
+        "background": var(--background-daisy-bush),
+        "border-color": var(--color-daisy-bush),
+      ),
+      "disabled": (
+        "color": var(--color-melrose-extra),
+        "background": var(--background-blue-chalk),
+        "border-color": var(--color-melrose),
+      ),
+    ),
+  ),
+  "danger": (
+    "color": var(--color-white),
+    "background": var(--background-carnation),
+    "border-color": "transparent",
+    "hover": (
+      "color": var(--color-white),
+      "background": var(--background-tall-poppy),
+      "border-color": "transparent",
+    ),
+    "pressed": (
+      "color": var(--color-white),
+      "background": var(--background-cherrywood),
+      "border-color": "transparent",
+    ),
+    "disabled": (
+      "color": var(--color-white),
+      "background": var(--background-mandys-pink),
+      "border-color": "transparent",
+    ),
+    "plain": (
+      "color": var(--color-tall-poppy),
+      "background": var(--background-white),
+      "border-color": var(--color-tall-poppy),
+      "hover": (
+        "color": var(--color-white),
+        "background": var(--background-old-brick),
+        "border-color": "transparent",
+      ),
+      "pressed": (
+        "color": var(--color-white),
+        "background": var(--background-cherrywood),
+        "border-color": "transparent",
+      ),
+      "disabled": (
+        "color": var(--color-mandys-pink),
+        "background": var(--background-white),
+        "border-color": var(--color-mandys-pink),
+      ),
+    ),
+  ),
+);
+
+$button-sizes: (
+  "large": (
+    "padding": 8px 16px,
+    "font-size": 16px,
+    "line-height": 24px,
+    "height": 40px,
+  ),
+  "small": (
+    "padding": 4px 10px,
+    "font-size": 14px,
+    "line-height": 20px,
+    "height": 32px,
+  ),
+);
+
+$dropdown-menu-variants: (
+  "default": (
+    "color": var(--color-east-bay),
+    "hover": (
+      "background-color": var(--background-blue-chalk),
+      "color": var(--color-royal-blue),
+    ),
+  ),
+  "danger": (
+    "color": var(--color-carnation),
+    "hover": (
+      "background-color": var(--background-forget-me-not),
+      "color": var(--color-carnation),
+    ),
+  ),
+);
+
+$progress-background: (
+  "shamrock": #4ce789,
+  "pastel-green": #76f09b,
+  "royal-blue": #6a4af1,
+  "sunglow": #ffcf2e,
+  "carnation": #ff515a,
+  "brick-red": #b72c4b,
+);
+
+$risk-level: (
+  "low": (
+    "background": var(--background-pastel-green),
+    "border-color": var(--color-mint-green),
+  ),
+  "medium": (
+    "background": var(--background-sunglow),
+    "border-color": var(--color-kournikova),
+  ),
+  "high": (
+    "background": var(--background-carnation),
+    "border-color": var(--color-mona-lisa),
+  ),
+  "extreme": (
+    "background": var(--background-brick-red),
+    "border-color": var(--color-cerise-red),
+  ),
+);
+
+$logo-sizes: (
+  "large": (
+    "width": 40px,
+    "height": 40px,
+    "min-width": 40px,
+    "image": (
+      "width": 32px,
+      "height": 32px,
+    ),
+  ),
+  "medium": (
+    "width": 32px,
+    "height": 32px,
+    "min-width": 32px,
+    "image": (
+      "width": 24px,
+      "height": 24px,
+    ),
+  ),
+  "small": (
+    "width": 24px,
+    "height": 24px,
+    "min-width": 24px,
+    "image": (
+      "width": 18px,
+      "height": 18px,
+    ),
+  ),
+);
