@@ -1,3 +1,7 @@
 {
-  "home": "Home"
+  "home": "Home",
+  "tutorial": "Tutorial",
+  "page_not_found": "Page not found",
+  "internal_server_error": "Internal server error",
+  "forbidden": "Forbidden"
 }

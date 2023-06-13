@@ -54,3 +54,9 @@ export function revokeUser(): void {
   universalCookie.remove('token', options);
   universalCookie.remove('refreshToken', options);
 }
+
+export function isAuthenticated(): boolean {
+  const userInfo = getUserInfo();
+  const token = getAccessToken();
+  return Boolean(userInfo && token);
+}
