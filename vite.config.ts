@@ -6,9 +6,12 @@ import copy from 'rollup-plugin-copy';
 import gzipPlugin from 'rollup-plugin-gzip';
 import eslintPlugin from 'vite-plugin-eslint';
 import stylelintPlugin from 'vite-plugin-stylelint';
-import viteImagemin from 'vite-plugin-imagemin';
 import AutoImport from 'unplugin-auto-import/vite';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import Unfonts from 'unplugin-fonts/vite';
 import type { UserConfig } from 'vite';
+import imageMinPlugin from './vite/image-min';
+import pwaPlugin from './vite/pwa';
 
 export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd(), '');
@@ -22,13 +25,13 @@ export default defineConfig(({ mode }): UserConfig => {
       emptyOutDir: true,
       manifest: true,
       cssCodeSplit: true,
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name?.endsWith('.css')) {
-              return `assets/main.css`;
-            }
-            return assetInfo.name!;
+          entryFileNames: 'app.[hash].js',
+          chunkFileNames: 'app.[hash].chunk.js',
+          assetFileNames: ({ name }) => {
+            return 'assets/[name]-[hash][extname]';
           },
         },
       },
@@ -62,41 +65,18 @@ export default defineConfig(({ mode }): UserConfig => {
         enums: path.resolve(__dirname, 'src/enums'),
         mixins: path.resolve(__dirname, 'src/mixins'),
         hooks: path.resolve(__dirname, 'src/hooks'),
+        plugins: path.resolve(__dirname, 'src/plugins'),
       },
       extensions: ['.tsx', '.ts', '.jsx', '.js', '.vue', '.json'],
     },
     plugins: [
       vue(),
       vueJsx(),
+      ViteMinifyPlugin(),
       eslintPlugin(),
       stylelintPlugin(),
-      viteImagemin({
-        gifsicle: {
-          optimizationLevel: 7,
-          interlaced: true,
-        },
-        optipng: {
-          optimizationLevel: 7,
-        },
-        mozjpeg: {
-          quality: 80,
-        },
-        pngquant: {
-          quality: [0.8, 0.9],
-          speed: 4,
-        },
-        svgo: {
-          plugins: [
-            {
-              name: 'removeViewBox',
-            },
-            {
-              name: 'removeEmptyAttrs',
-              active: false,
-            },
-          ],
-        },
-      }),
+      imageMinPlugin,
+      pwaPlugin,
       gzipPlugin({
         filter: /\.(js|css)$/i,
         fileName: '',
@@ -182,6 +162,39 @@ export default defineConfig(({ mode }): UserConfig => {
           },
         ],
         dts: 'src/types/auto-imports.d.ts',
+      }),
+      Unfonts({
+        google: {
+          preconnect: true,
+          injectTo: 'head-prepend',
+          families: [
+            'Inter',
+            {
+              name: 'Inter',
+              styles: 'wght@400;500;600;700',
+              defer: true,
+            },
+          ],
+        },
+        custom: {
+          families: [
+            {
+              name: 'font-icon',
+              local: 'font-icon',
+              src: 'assets/fonts/font-icon.ttf',
+            },
+            {
+              name: 'font-icon',
+              local: 'font-icon',
+              src: 'assets/fonts/font-icon.woff',
+            },
+            {
+              name: 'font-icon',
+              local: 'font-icon',
+              src: 'assets/fonts/font-icon.eot',
+            },
+          ],
+        },
       }),
     ],
   };

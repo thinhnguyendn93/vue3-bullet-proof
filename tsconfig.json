@@ -47,7 +47,8 @@
       "store/*": ["src/store/*"],
       "pages/*": ["src/pages/*"],
       "modals/*": ["src/modals/*"],
-      "mixins/*": ["src/mixins/*"]
+      "mixins/*": ["src/mixins/*"],
+      "plugins/*": ["src/plugins/*"]
     },
     "typeRoots": ["./node_modules/@types"],
     "types": ["node"],

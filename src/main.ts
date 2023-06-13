@@ -1,5 +1,6 @@
 import { createPinia } from 'pinia';
 import { createMetaManager } from 'vue-meta';
+import vuetify from 'plugins/vuetify';
 import i18n from 'config/i18n';
 import Application from 'components/Application';
 import MasterLayout from 'components/Layout/MasterLayout';
@@ -16,6 +17,7 @@ createApp(Application)
   .use(router)
   .use(i18n)
   .use(pinia)
+  .use(vuetify)
   .use(createMetaManager())
   .component('MasterLayout', MasterLayout)
   .component('DashboardLayout', DashboardLayout)
