@@ -1,0 +1,17 @@
+.select-custom-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

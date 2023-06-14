@@ -24,4 +24,12 @@ declare namespace App {
     next: NavigationGuardNext;
     isLoggedIn: boolean;
   };
+
+  export type SelectItem = {
+    item: ListItem<Item>;
+    index: number;
+    props: Record<string, unknown>;
+  };
+
+  export type AppLanguage = 'en' | 'vi';
 }

@@ -1,7 +1,8 @@
 {
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "commonjs",
+      "moduleResolution": "node"
     }
   },
   "compilerOptions": {
@@ -50,8 +51,8 @@
       "mixins/*": ["src/mixins/*"],
       "plugins/*": ["src/plugins/*"]
     },
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "src/types"],
+    "types": ["node", "vuetify"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],

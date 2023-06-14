@@ -1,5 +1,9 @@
 import UniversalCookie from 'universal-cookie';
-import { COOKIE_DOMAIN, COOKIE_EXPIRES_DATE } from 'config/constants';
+import {
+  COOKIE_DOMAIN,
+  COOKIE_EXPIRES_DATE,
+  DEFAULT_LANGUAGE,
+} from 'config/constants';
 
 const universalCookie = new UniversalCookie();
 
@@ -43,7 +47,7 @@ export function getAccessToken(): string {
 }
 
 export function getLanguage(): string {
-  return universalCookie.get('i18next');
+  return universalCookie.get('i18next') || DEFAULT_LANGUAGE;
 }
 
 export function revokeUser(): void {

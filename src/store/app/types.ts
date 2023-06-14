@@ -2,11 +2,11 @@ export type State = {
   locale: string;
 };
 
-export interface Getters {
+export type Getters = {
   currentLanguage(state: State): string;
-}
+};
 
-export interface Actions {
-  changeLanguage(): void;
+export type Actions = {
+  changeLanguage(lang: App.AppLanguage): void;
   reset(): void;
-}
+};

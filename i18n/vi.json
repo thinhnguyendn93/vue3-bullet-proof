@@ -1,3 +1,10 @@
 {
-  "home": "Trang chủ"
+  "home": "Trang chủ",
+  "tutorial": "Hướng dẫn",
+  "page_not_found": "Không tìm thấy trang",
+  "internal_server_error": "Đã xảy ra lỗi",
+  "forbidden": "Cấm",
+  "open_dialog": "Mở hội thoại",
+  "vietnamese": "Tiếng Việt",
+  "english": "Tiếng Anh"
 }

@@ -3,5 +3,9 @@
   "tutorial": "Tutorial",
   "page_not_found": "Page not found",
   "internal_server_error": "Internal server error",
-  "forbidden": "Forbidden"
+  "forbidden": "Forbidden",
+  "open_dialog": "Open dialog",
+  "select_a_language": "Select a language",
+  "vietnamese": "Vietnamese",
+  "english": "English"
 }

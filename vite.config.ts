@@ -71,7 +71,9 @@ export default defineConfig(({ mode }): UserConfig => {
     },
     plugins: [
       vue(),
-      vueJsx(),
+      vueJsx({
+        transformOn: true,
+      }),
       ViteMinifyPlugin(),
       eslintPlugin(),
       stylelintPlugin(),
@@ -96,6 +98,7 @@ export default defineConfig(({ mode }): UserConfig => {
         ],
       }),
       AutoImport({
+        vueTemplate: true,
         eslintrc: {
           enabled: true,
         },

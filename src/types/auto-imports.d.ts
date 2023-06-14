@@ -97,3 +97,94 @@ declare global {
   // @ts-ignore
   export type { Chart } from 'chart.js'
 }
+// for vue template auto import
+import { UnwrapRef } from 'vue'
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    readonly Bar: UnwrapRef<typeof import('vue-chartjs')['Bar']>
+    readonly Doughnut: UnwrapRef<typeof import('vue-chartjs')['Doughnut']>
+    readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly Line: UnwrapRef<typeof import('vue-chartjs')['Line']>
+    readonly assign: UnwrapRef<typeof import('lodash-es')['assign']>
+    readonly classNames: UnwrapRef<typeof import('classnames')['default']>
+    readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
+    readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly debounce: UnwrapRef<typeof import('lodash-es')['debounce']>
+    readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
+    readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly forEach: UnwrapRef<typeof import('lodash-es')['forEach']>
+    readonly get: UnwrapRef<typeof import('lodash-es')['get']>
+    readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
+    readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly has: UnwrapRef<typeof import('lodash-es')['has']>
+    readonly head: UnwrapRef<typeof import('lodash-es')['head']>
+    readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly intersection: UnwrapRef<typeof import('lodash-es')['intersection']>
+    readonly isArray: UnwrapRef<typeof import('lodash-es')['isArray']>
+    readonly isBoolean: UnwrapRef<typeof import('lodash-es')['isBoolean']>
+    readonly isDate: UnwrapRef<typeof import('lodash-es')['isDate']>
+    readonly isEmpty: UnwrapRef<typeof import('lodash-es')['isEmpty']>
+    readonly isEqual: UnwrapRef<typeof import('lodash-es')['isEqual']>
+    readonly isNull: UnwrapRef<typeof import('lodash-es')['isNull']>
+    readonly isNumber: UnwrapRef<typeof import('lodash-es')['isNumber']>
+    readonly isObject: UnwrapRef<typeof import('lodash-es')['isObject']>
+    readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
+    readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
+    readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
+    readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly isString: UnwrapRef<typeof import('lodash-es')['isString']>
+    readonly isUndefined: UnwrapRef<typeof import('lodash-es')['isUndefined']>
+    readonly keyBy: UnwrapRef<typeof import('lodash-es')['keyBy']>
+    readonly keys: UnwrapRef<typeof import('lodash-es')['keys']>
+    readonly map: UnwrapRef<typeof import('lodash-es')['map']>
+    readonly mapValues: UnwrapRef<typeof import('lodash-es')['mapValues']>
+    readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly noop: UnwrapRef<typeof import('lodash-es')['noop']>
+    readonly omit: UnwrapRef<typeof import('lodash-es')['omit']>
+    readonly omitBy: UnwrapRef<typeof import('lodash-es')['omitBy']>
+    readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
+    readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
+    readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
+    readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
+    readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
+    readonly onErrorCaptured: UnwrapRef<typeof import('vue')['onErrorCaptured']>
+    readonly onMounted: UnwrapRef<typeof import('vue')['onMounted']>
+    readonly onRenderTracked: UnwrapRef<typeof import('vue')['onRenderTracked']>
+    readonly onRenderTriggered: UnwrapRef<typeof import('vue')['onRenderTriggered']>
+    readonly onScopeDispose: UnwrapRef<typeof import('vue')['onScopeDispose']>
+    readonly onServerPrefetch: UnwrapRef<typeof import('vue')['onServerPrefetch']>
+    readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
+    readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
+    readonly pick: UnwrapRef<typeof import('lodash-es')['pick']>
+    readonly pickBy: UnwrapRef<typeof import('lodash-es')['pickBy']>
+    readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
+    readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
+    readonly ref: UnwrapRef<typeof import('vue')['ref']>
+    readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
+    readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
+    readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly size: UnwrapRef<typeof import('lodash-es')['size']>
+    readonly toArray: UnwrapRef<typeof import('lodash-es')['toArray']>
+    readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
+    readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
+    readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
+    readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
+    readonly trim: UnwrapRef<typeof import('lodash-es')['trim']>
+    readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
+    readonly useCssVar: UnwrapRef<typeof import('@vueuse/core')['useCssVar']>
+    readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly watch: UnwrapRef<typeof import('vue')['watch']>
+    readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
+    readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
+    readonly watchSyncEffect: UnwrapRef<typeof import('vue')['watchSyncEffect']>
+  }
+}
