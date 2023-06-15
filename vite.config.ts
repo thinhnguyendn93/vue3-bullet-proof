@@ -165,6 +165,7 @@ export default defineConfig(({ mode }): UserConfig => {
           },
         ],
         dts: 'src/types/auto-imports.d.ts',
+        dirs: [path.resolve(__dirname, 'src/components/Vuetify')],
       }),
       Unfonts({
         google: {

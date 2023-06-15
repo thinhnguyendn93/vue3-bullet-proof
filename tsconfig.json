@@ -52,7 +52,7 @@
       "plugins/*": ["src/plugins/*"]
     },
     "typeRoots": ["./node_modules/@types", "src/types"],
-    "types": ["node", "vuetify"],
+    "types": ["node"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],

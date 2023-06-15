@@ -1,4 +1,4 @@
-import { VDataTable } from 'vuetify/labs/components';
+import { VDataTable } from 'components/Vuetify';
 
 export default defineComponent({
   /* eslint-disable max-lines-per-function, max-lines*/

@@ -33,7 +33,7 @@ export default defineComponent({
                 block
                 onClick={() => (dialogVisible.value = false)}
               >
-                Close dialog
+                {t('close_dialog')}
               </VBtn>
             </VCardActions>
           </VCard>

@@ -12,6 +12,7 @@ export default defineStore<'app', State, Getters, Actions>({
   actions: {
     changeLanguage(lang: App.AppLanguage): void {
       i18n.global.locale.value = lang;
+      this.locale = lang;
       setLanguage(lang);
     },
     reset(): void {

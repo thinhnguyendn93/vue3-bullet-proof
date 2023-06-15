@@ -6,7 +6,7 @@ import {
   VDivider,
   VIcon,
   VRow,
-} from 'vuetify/components';
+} from 'components/Vuetify';
 import DataTable from './elements/DataTable';
 import Dialog from './elements/Dialog';
 import SelectLanguage from './elements/SelectLanguage';

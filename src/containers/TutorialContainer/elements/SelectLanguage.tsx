@@ -1,16 +1,17 @@
 import { useI18n } from 'vue-i18n';
 import { useLocale } from 'vuetify';
-import { VListItem, VSelect } from 'vuetify/components';
+import { storeToRefs } from 'pinia';
 import { RESOURCES } from 'config/constants';
 import useAppStore from 'store/app';
+import { VListItem, VSelect } from 'components/Vuetify';
 
 export default defineComponent({
   /* eslint-disable */
   setup() {
     const { current } = useLocale();
     const { t } = useI18n();
-    const { currentLanguage, changeLanguage } = useAppStore();
-    const selectedLanguage = ref(currentLanguage);
+    const appStore = useAppStore();
+    const { currentLanguage } = storeToRefs(appStore);
 
     const options = computed(() => [
       {
@@ -26,14 +27,14 @@ export default defineComponent({
     ]);
 
     const onChangeLanguage = (lang: string) => {
-      selectedLanguage.value = lang;
       current.value = lang;
-      changeLanguage(lang as App.AppLanguage);
+      appStore.changeLanguage(lang as App.AppLanguage);
     };
 
     const renderItem = ({ item, props }: App.SelectItem) => {
       const { image } = props;
       const { value, title } = item;
+
       return (
         <VListItem
           title={title}
@@ -70,12 +71,7 @@ export default defineComponent({
       <VSelect
         label={t('select_a_language')}
         items={options.value}
-        modelValue={selectedLanguage.value}
-        onUpdate:modelValue={(value) => {
-          //
-          debugger;
-          selectedLanguage.value = value;
-        }}
+        modelValue={currentLanguage}
         itemValue="key"
         itemTitle="label"
         itemProps
